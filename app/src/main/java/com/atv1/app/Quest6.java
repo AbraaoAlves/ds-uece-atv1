@@ -21,6 +21,19 @@ public class Quest6 {
     System.out.println("Lista gerada:");
     lista.imprimeLista();
 
+    // remover os duplicados
+    for (int i = 0; i < lista.getQuantidadeElementos(); i++) {
+      int element = lista.get(i);
+      
+      for (int j = 0; j < lista.getQuantidadeElementos(); j++) {
+        int other = lista.get(j);
+        // se o elemento for igual a outro elemento e eles estiverem em indices diferentes
+        if (i != j && element == other) {
+          //remove o duplicado
+          lista.removePosicao(j);
+        }
+      }
+    }
 
     System.out.println("\nLista não duplicada:");
     lista.imprimeLista();
