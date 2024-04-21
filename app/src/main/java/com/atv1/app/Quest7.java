@@ -33,6 +33,22 @@ public class Quest7 {
     System.out.println("Lista Ly:");
     Ly.imprimeLista();
 
+    for (int i = 0; i < n; i++) {
+      int element= Lx.get(i);
+
+      for (int j = 0; j< n; j++){
+        int other = Ly.get(j);
+
+        if (element == other) {
+          break;
+        }
+        // se for o ultimo item a comparar:
+        if (j == n-1){
+          // adiciona ao Lz
+          Lz.adicionaFinal(element);
+        }
+      }
+    }
 
     System.out.println("Lista Lz:");
     Lz.imprimeLista();
