@@ -23,6 +23,25 @@ public class Quest5 {
       lista.adicionaFinal(number);
     }
 
+    // Ordena a lista em ordem crescente
+		int size = lista.getQuantidadeElementos();
+		for (int actualPos = 0; actualPos < size - 1; actualPos++) {
+			for (int nextPos = actualPos + 1; nextPos < size; nextPos++) {
+				
+				int actual = lista.get(actualPos);
+				int next = lista.get(nextPos);
+				
+				// permuta a posição dos elementos 
+				if (actual > next) {
+
+					lista.removePosicao(actualPos);
+					lista.adicionaPosicao(next, actualPos);
+
+					lista.removePosicao(nextPos);
+					lista.adicionaPosicao(actual, nextPos);					
+				}
+			}
+		}
 
     System.out.println("Lista ordenada:");
     lista.imprimeLista();
