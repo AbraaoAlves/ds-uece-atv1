@@ -1,7 +1,7 @@
 package com.atv1.app;
 
 public class ListaEncadeada {
-	private No inicioLista;
+  private No inicioLista;
 	private int quantidadeElementos;
 	
 	public ListaEncadeada() {
@@ -72,13 +72,12 @@ public class ListaEncadeada {
 			return;
 		}
 		
-		No elementoRemovido = inicioLista;
+		// No elementoRemovido = inicioLista;
 		
 		inicioLista = inicioLista.proximoNo;
 				
-		System.out.println("Elemento removido: " + elementoRemovido.elemento);
-		quantidadeElementos--;
-		
+			//System.out.println("Elemento removido: " + elementoRemovido.elemento);
+		quantidadeElementos--;	
 	}
 	
 	public void adicionaPosicao(int e, int pos) {
@@ -91,7 +90,7 @@ public class ListaEncadeada {
 				int posicao = 1;
 				No novo = new No(e);
 				No aux = inicioLista;
-				
+				// Encontra a posição correta para inserir o novo elemento
 				while(posicao < pos) {
 					aux = aux.proximoNo;
 					posicao++;
@@ -130,7 +129,7 @@ public class ListaEncadeada {
 			else 
 				aux.proximoNo = removido.proximoNo;
 				
-			System.out.println("Elemento removido: " + removido.elemento);
+			// System.out.println("Elemento removido: " + removido.elemento);
 			quantidadeElementos--;
 		}
 	}
@@ -149,8 +148,8 @@ public class ListaEncadeada {
 		return quantidadeElementos;
 	}
 
-  public int get(int pos) {
-    if (pos < 0 || pos >= quantidadeElementos) {
+	public int get(int pos) {
+		if (pos < 0 || pos >= quantidadeElementos) {
 			throw new IllegalArgumentException("Posição inválida");
 		}
 		No aux = inicioLista;
@@ -162,6 +161,5 @@ public class ListaEncadeada {
 			aux = aux.proximoNo;
 		}
 		return aux.elemento;
-  }
-	
+	}
 }
