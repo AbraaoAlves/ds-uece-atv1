@@ -64,6 +64,7 @@ public class ListaEncadeada {
 		
 		novo.proximoNo = inicioLista;
 		inicioLista = novo;
+		quantidadeElementos++;
 	}
 	
 	public void removeInicio() {
